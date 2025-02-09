@@ -67,12 +67,10 @@ const PostStats = ({ post, userId }: PostStatsProps) => {
     setIsSaved(true);
   };
 
-  const containerStyles = location.pathname.startsWith("/profile")
-    ? "w-full"
-    : "";
-
   return (
-    <div className="flex justify-between items-center z-20 animate-fade-in">
+    <div className={`flex justify-between items-center z-20 animate-fade-in ${
+      location.pathname.startsWith("/profile") ? "w-full" : ""
+    }`}>
       <div className="flex gap-2 mr-5">
         <img
           src={checkIsLiked(likes, userId) ? "/assets/icons/liked.svg" : "/assets/icons/like.svg"}
