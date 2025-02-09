@@ -3,20 +3,20 @@
 
 ## 👥 Team Members  
 <div align="center">
-  <img src="<shreyas_photo_link>" alt="Shreyas Kumar" width="150"/>  
-  <img src="<shivanya_photo_link>" alt="Shivanya Shomir Dutta" width="150"/>  
-  <img src="<sahil_photo_link>" alt="Sahil" width="150"/>  
+  <img src="https://i.ibb.co/wFBgmM1W/Firefly-20250124015115.png" alt="Shreyas Kumar" width="150"/>  
+  <img src="https://i.ibb.co/v4637sjJ/1733394873824.jpg" alt="Shivanya Shomir Dutta" width="150"/>  
+  <img src="https://i.ibb.co/vvfQ8nmK/1705058615138.jpg" alt="Sahil" width="150"/>  
 </div>
 
-1. **Shreyas Kumar** (Reg No: `<your_reg_no>`)  
-2. **Shivanya Shomir Dutta** (Reg No: `<shivanya_reg_no>`)  
-3. **Sahil <Last Name>** (Reg No: `<sahil_reg_no>`)  
+1. **Shreyas Kumar** (Reg No: `23BAI1008`)  
+2. **Shivanya Shomir Dutta** (Reg No: `23BAI1424`)  
+3. **Sahil <Last Name>** (Reg No: `23BAI1405`)  
 
 ---
 
 ## 📌 Project Overview  
 - **Course Code:** BCS203E  
-- **Project Name:** **<Your Web Programming Project Title>**  
+- **Project Name:** **SOCIAL APP**  
 - **Description:** A feature-rich social media application that enhances user engagement with modern web technologies.  
 
 ---
@@ -41,12 +41,12 @@
 
 ## 👩‍🏫 Submitted To  
 <div align="center">
-  <img src="<teacher_photo_link>" alt="Anubha Pearline Ma'am" width="180" style="border-radius: 50%; box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);"/>
+  <img src="https://i.ibb.co/Csbx2NvJ/1622474845666.jpg" alt="Anubha Pearline Ma'am" width="180" style="border-radius: 50%; box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);"/>
 </div>  
 
 **📌 Anubha Pearline Ma'am**  
 
-**📅 Submission Date:** `<DD/MM/YYYY>`  
+**📅 Submission Date:** `<DD/MM/2025>`  
 
 ---
 
@@ -60,8 +60,8 @@ Ensure you have:
 
 ### 2️⃣ Clone the Repository  
 ```bash
-git clone <your_project_repo_link>
-cd <project_folder>
+git clone https://github.com/shkshreyas/instylo
+cd instylo
 ```
 
 ### 3️⃣ Install Dependencies  
