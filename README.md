@@ -1,6 +1,4 @@
-Here's a refined and well-structured README incorporating all details while ensuring a visually appealing format.  
 
-```markdown
 # 🌐 Web Programming Project (BCS203E)
 
 ## 👥 Team Members  
