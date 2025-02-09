@@ -7,7 +7,7 @@ import Bottombar from "@/components/shared/Bottombar";
 import LeftSidebar from "@/components/shared/LeftSidebar";
 
 const RootLayout = () => {
-  const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false);
+  const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(window.innerWidth < 1024);
 
   useEffect(() => {
     // Listen for sidebar toggle events
@@ -34,7 +34,7 @@ const RootLayout = () => {
           width: isSidebarCollapsed ? '100%' : 'calc(100% - 270px)'
         }}
         transition={{ duration: 0.3, type: "spring", stiffness: 200 }}
-        className="flex flex-1 h-full"
+        className="flex flex-1 h-full ml-0 lg:ml-[270px]"
       >
         <Outlet />
       </motion.section>

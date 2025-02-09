@@ -14,17 +14,22 @@ const LeftSidebar = () => {
   const { pathname } = useLocation();
   const { user, setUser, setIsAuthenticated, isLoading } = useUserContext();
   const [isCollapsed, setIsCollapsed] = useState(false);
+  const isMobile = window.innerWidth < 1024; // Check for mobile view
 
   const { mutate: signOut } = useSignOutAccount();
 
   useEffect(() => {
+    // Set collapsed state based on device
+    setIsCollapsed(isMobile);
+    
     const savedState = localStorage.getItem("sidebarState");
-    if (savedState) {
+    if (savedState && !isMobile) {
       setIsCollapsed(JSON.parse(savedState));
     }
-  }, []);
+  }, [isMobile]);
 
   const toggleSidebar = () => {
+    if (isMobile) return; // Prevent toggling on mobile
     const newState = !isCollapsed;
     setIsCollapsed(newState);
     localStorage.setItem("sidebarState", JSON.stringify(newState));
@@ -45,25 +50,28 @@ const LeftSidebar = () => {
 
   return (
     <>
-      <motion.button
-        onClick={toggleSidebar}
-        initial={false}
-        animate={{
-          left: isCollapsed ? "1rem" : "270px",
-          rotate: isCollapsed ? 180 : 0,
-        }}
-        transition={{ duration: 0.3, type: "spring", stiffness: 200 }}
-        className="fixed top-8 z-50 p-3 glass-effect rounded-full 
-          hover:bg-primary-500/20 hover:shadow-premium-hover
-          transition-all duration-300 md:flex hidden"
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.95 }}>
-        <img
-          src="/assets/icons/chevron-left.svg"
-          alt="collapse"
-          className="w-6 h-6 text-light-1"
-        />
-      </motion.button>
+      {/* Only show toggle button on desktop */}
+      {!isMobile && (
+        <motion.button
+          onClick={toggleSidebar}
+          initial={false}
+          animate={{
+            left: isCollapsed ? "1rem" : "270px",
+            rotate: isCollapsed ? 180 : 0,
+          }}
+          transition={{ duration: 0.3, type: "spring", stiffness: 200 }}
+          className="fixed top-8 z-50 p-3 glass-effect rounded-full 
+            hover:bg-primary-500/20 hover:shadow-premium-hover
+            transition-all duration-300 hidden lg:flex"
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.95 }}>
+          <img
+            src="/assets/icons/chevron-left.svg"
+            alt="collapse"
+            className="w-6 h-6 text-light-1"
+          />
+        </motion.button>
+      )}
 
       <motion.nav
         initial={false}
@@ -73,7 +81,7 @@ const LeftSidebar = () => {
           x: isCollapsed ? "-100%" : 0,
         }}
         transition={{ duration: 0.3, type: "spring", stiffness: 200 }}
-        className="leftsidebar">
+        className="leftsidebar hidden lg:flex">
         <div className="flex flex-col gap-11 min-w-[270px]">
           <Link to="/" className="flex gap-3 items-center">
             <h1 className="gradient-text text-2xl">Instylo</h1>
