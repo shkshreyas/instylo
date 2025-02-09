@@ -10,12 +10,12 @@
 
 1. **Shreyas Kumar** (Reg No: `23BAI1008`)  
 2. **Shivanya Shomir Dutta** (Reg No: `23BAI1424`)  
-3. **Sahil <Last Name>** (Reg No: `23BAI1405`)  
+3. **Sahil Sandeep** (Reg No: `23BAI1405`)  
 
 ---
 
 ## 📌 Project Overview  
-- **Course Code:** BCS203E  
+- **Course Code:** BCSE203E  
 - **Project Name:** **SOCIAL APP**  
 - **Description:** A feature-rich social media application that enhances user engagement with modern web technologies.  
 
