@@ -434,12 +434,12 @@ export async function getRecentPosts() {
       appwriteConfig.postCollectionId,
       [Query.orderDesc("$createdAt"), Query.limit(20)]
     );
-
-    if (!posts) throw Error;
-
+    // Log the response so you can verify the structure and content
+    console.log("Fetched posts:", posts);
     return posts;
   } catch (error) {
-    console.log(error);
+    console.error("Error fetching posts:", error);
+    throw error; // rethrowing to let React Query know that an error occurred
   }
 }
 
