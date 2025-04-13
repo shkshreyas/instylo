@@ -120,17 +120,14 @@ export async function signOutAccount() {
 // ============================== CREATE POST
 export async function createPost(post: INewPost) {
   try {
-    // Upload file to appwrite storage
+    // Upload file to ImgBB
     const uploadedFile = await uploadFile(post.file[0]);
 
     if (!uploadedFile) throw Error;
 
-    // Get file url
-    const fileUrl = getFilePreview(uploadedFile.$id);
-    if (!fileUrl) {
-      await deleteFile(uploadedFile.$id);
-      throw Error;
-    }
+    // Get file url from ImgBB response
+    const fileUrl = uploadedFile.imageData.display_url;
+    if (!fileUrl) throw Error;
 
     // Convert tags into array
     const tags = post.tags?.replace(/ /g, "").split(",") || [];
@@ -150,10 +147,7 @@ export async function createPost(post: INewPost) {
       }
     );
 
-    if (!newPost) {
-      await deleteFile(uploadedFile.$id);
-      throw Error;
-    }
+    if (!newPost) throw Error;
 
     return newPost;
   } catch (error) {
@@ -164,47 +158,41 @@ export async function createPost(post: INewPost) {
 // ============================== UPLOAD FILE
 export async function uploadFile(file: File) {
   try {
-    const uploadedFile = await storage.createFile(
-      appwriteConfig.storageId,
-      ID.unique(),
-      file
-    );
-
-    return uploadedFile;
+    const formData = new FormData();
+    formData.append('image', file);
+    
+    const response = await fetch(`https://api.imgbb.com/1/upload?key=b9409d197d650cf07172a9814f0b19b9`, {
+      method: 'POST',
+      body: formData,
+    });
+    
+    const data = await response.json();
+    
+    if (!data.success) throw Error;
+    
+    // Return an object similar to Appwrite's response but with ImgBB data
+    return {
+      $id: data.data.id, // Using ImgBB's id as our $id
+      imageData: data.data,
+    };
   } catch (error) {
     console.log(error);
+    return null;
   }
 }
 
 // ============================== GET FILE URL
 export function getFilePreview(fileId: string) {
-  try {
-    const fileUrl = storage.getFilePreview(
-      appwriteConfig.storageId,
-      fileId,
-      2000,
-      2000,
-      "top",
-      100
-    );
-
-    if (!fileUrl) throw Error;
-
-    return fileUrl;
-  } catch (error) {
-    console.log(error);
-  }
+  // ImgBB doesn't need a preview generation function
+  // We'll just use the direct URL that was stored
+  return fileId;
 }
 
 // ============================== DELETE FILE
 export async function deleteFile(fileId: string) {
-  try {
-    await storage.deleteFile(appwriteConfig.storageId, fileId);
-
-    return { status: "ok" };
-  } catch (error) {
-    console.log(error);
-  }
+  // ImgBB's free API doesn't provide a way to delete images programmatically
+  // We'll just return a success status to maintain API compatibility
+  return { status: "ok" };
 }
 
 // ============================== GET POSTS
@@ -276,16 +264,13 @@ export async function updatePost(post: IUpdatePost) {
     };
 
     if (hasFileToUpdate) {
-      // Upload new file to appwrite storage
+      // Upload new file to ImgBB
       const uploadedFile = await uploadFile(post.file[0]);
       if (!uploadedFile) throw Error;
 
-      // Get new file url
-      const fileUrl = getFilePreview(uploadedFile.$id);
-      if (!fileUrl) {
-        await deleteFile(uploadedFile.$id);
-        throw Error;
-      }
+      // Get new file url from ImgBB response
+      const fileUrl = uploadedFile.imageData.display_url;
+      if (!fileUrl) throw Error;
 
       image = { ...image, imageUrl: fileUrl, imageId: uploadedFile.$id };
     }
@@ -308,20 +293,7 @@ export async function updatePost(post: IUpdatePost) {
     );
 
     // Failed to update
-    if (!updatedPost) {
-      // Delete new file that has been recently uploaded
-      if (hasFileToUpdate) {
-        await deleteFile(image.imageId);
-      }
-
-      // If no new file uploaded, just throw error
-      throw Error;
-    }
-
-    // Safely delete old file after successful update
-    if (hasFileToUpdate) {
-      await deleteFile(post.imageId);
-    }
+    if (!updatedPost) throw Error;
 
     return updatedPost;
   } catch (error) {
@@ -497,16 +469,13 @@ export async function updateUser(user: IUpdateUser) {
     };
 
     if (hasFileToUpdate) {
-      // Upload new file to appwrite storage
+      // Upload new file to ImgBB
       const uploadedFile = await uploadFile(user.file[0]);
       if (!uploadedFile) throw Error;
 
-      // Get new file url
-      const fileUrl = getFilePreview(uploadedFile.$id);
-      if (!fileUrl) {
-        await deleteFile(uploadedFile.$id);
-        throw Error;
-      }
+      // Get new file url from ImgBB response
+      const fileUrl = uploadedFile.imageData.display_url;
+      if (!fileUrl) throw Error;
 
       image = { ...image, imageUrl: fileUrl, imageId: uploadedFile.$id };
     }
@@ -525,19 +494,7 @@ export async function updateUser(user: IUpdateUser) {
     );
 
     // Failed to update
-    if (!updatedUser) {
-      // Delete new file that has been recently uploaded
-      if (hasFileToUpdate) {
-        await deleteFile(image.imageId);
-      }
-      // If no new file uploaded, just throw error
-      throw Error;
-    }
-
-    // Safely delete old file after successful update
-    if (user.imageId && hasFileToUpdate) {
-      await deleteFile(user.imageId);
-    }
+    if (!updatedUser) throw Error;
 
     return updatedUser;
   } catch (error) {

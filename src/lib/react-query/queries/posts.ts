@@ -1,4 +1,4 @@
-import { useQuery } from "react-query";
+import { useQuery } from "@tanstack/react-query";
 import { getRecentPosts } from "@/lib/appwrite/api";
 
 export function useRecentPosts() {

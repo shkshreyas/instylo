@@ -41,8 +41,8 @@ const PostForm = ({ post, action }: PostFormProps) => {
     },
   });
 
-  const { mutateAsync: createPost, isPending: isLoadingCreate } = useCreatePost();
-  const { mutateAsync: updatePost, isPending: isLoadingUpdate } = useUpdatePost();
+  const { mutateAsync: createPost, isLoading: isLoadingCreate } = useCreatePost();
+  const { mutateAsync: updatePost, isLoading: isLoadingUpdate } = useUpdatePost();
 
   const handleSubmit = async (values: z.infer<typeof PostValidation>) => {
     if (values.file.length === 0 && !post) {

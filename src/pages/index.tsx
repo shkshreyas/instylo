@@ -1,4 +1,3 @@
-import React from "react";
 import GridPostList from "@/components/shared/GridPostList";
 import { useRecentPosts } from "@/lib/react-query/queries/posts";
 import { Loader } from "@/components/shared";
