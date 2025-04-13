@@ -189,7 +189,7 @@ export function getFilePreview() {
 }
 
 // ============================== DELETE FILE
-export async function deleteFile(fileId: string) {
+export async function deleteFile() {
   // ImgBB's free API doesn't provide a way to delete images programmatically
   // We'll just return a success status to maintain API compatibility
   return { status: "ok" };
@@ -314,7 +314,7 @@ export async function deletePost(postId?: string, imageId?: string) {
 
     if (!statusCode) throw Error;
 
-    await deleteFile(imageId);
+    await deleteFile();
 
     return { status: "Ok" };
   } catch (error) {
