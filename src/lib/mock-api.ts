@@ -63,7 +63,7 @@ export const mockGeminiAPI = async (prompt: string): Promise<string> => {
 };
 
 // Mock Weather API
-export const mockWeatherAPI = async (lat: number, lon: number) => {
+export const mockWeatherAPI = async (_lat: number, _lon: number) => {
   // Simulate API latency
   await delay(800 + Math.random() * 500);
   

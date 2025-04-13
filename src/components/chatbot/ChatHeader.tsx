@@ -1,16 +1,9 @@
 import React from 'react';
-import { Brain, Bot, User, BookOpen, Zap, Sun, BarChart2, VolumeX, Volume2, Mic, Settings } from 'lucide-react';
+import { Brain, Bot, User, BookOpen, Zap, Sun, BarChart2, Volume2 } from 'lucide-react';
 
 interface ChatHeaderProps {
-  showSettings: boolean;
-  setShowSettings: (show: boolean) => void;
-  showVoiceSettings: boolean;
-  setShowVoiceSettings: (show: boolean) => void;
-  showPromptLibrary: boolean;
-  setShowPromptLibrary: (show: boolean) => void;
-  showConversationMemory: boolean;
   setShowConversationMemory: (show: boolean) => void;
-  showToneSelector: boolean;
+  setShowPromptLibrary: (show: boolean) => void;
   setShowToneSelector: (show: boolean) => void;
   isSpeaking: boolean;
   toggleSpeech: () => void;
@@ -20,24 +13,23 @@ interface ChatHeaderProps {
     interests?: string[];
   } | null;
   selectedTone: string;
+  onClose: () => void;
+  isFullScreen: boolean;
+  toggleFullScreen: () => void;
+  toggleSettings: () => void;
+  downloadPDF: () => void;
+  toggleMemoryPanel: () => void;
 }
 
 const ChatHeader: React.FC<ChatHeaderProps> = ({ 
-  showSettings, 
-  setShowSettings, 
-  showVoiceSettings, 
-  setShowVoiceSettings,
-  showPromptLibrary,
-  setShowPromptLibrary,
-  showConversationMemory,
   setShowConversationMemory,
-  showToneSelector,
+  setShowPromptLibrary,
   setShowToneSelector,
   isSpeaking,
   toggleSpeech,
   conversationMemory,
   detectedUserInfo,
-  selectedTone
+  selectedTone,
 }) => {
   // Context strength calculation - based on memory points and detected info
   const getContextStrength = () => {
@@ -125,27 +117,13 @@ const ChatHeader: React.FC<ChatHeaderProps> = ({
         <button 
           onClick={toggleSpeech} 
           className={`btn btn-sm ${isSpeaking ? 'btn-primary' : 'btn-ghost'}`}
-          title={isSpeaking ? "Turn off speech" : "Turn on speech"}
+          title="Text-to-Speech"
         >
-          {isSpeaking ? <Volume2 className="w-5 h-5" /> : <VolumeX className="w-5 h-5" />}
-        </button>
-        <button 
-          onClick={() => setShowVoiceSettings(true)}
-          className="btn btn-sm btn-ghost"
-          title="Voice Settings"
-        >
-          <Mic className="w-5 h-5" />
-        </button>
-        <button 
-          onClick={() => setShowSettings(true)}
-          className="btn btn-sm btn-ghost"
-          title="Settings"
-        >
-          <Settings className="w-5 h-5" />
+          <Volume2 className="w-5 h-5" />
         </button>
       </div>
     </div>
   );
 };
 
-export default ChatHeader; 
+export default ChatHeader;

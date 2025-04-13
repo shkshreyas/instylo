@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Loader2, Send, Mic, Sun, Volume2, Bot, User, Download, Copy, Moon, Eraser, Brain, Zap, Settings, Paperclip, X, Upload, Image, File, Info } from 'lucide-react';
+import { Send, Mic, Sun, Volume2, Bot, User, Download, Copy, Eraser, Brain, Zap, Settings, Paperclip, X, File, Info } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { marked } from 'marked';
 import DOMPurify from 'dompurify';
@@ -92,22 +92,6 @@ const ChatMessage: React.FC<{
       });
     }
   }, [message]);
-
-  // Handle the marked function properly - it can return either a string or a Promise<string>
-  const getHtml = () => {
-    try {
-      const result = marked(message);
-      if (typeof result === 'string') {
-        return DOMPurify.sanitize(result);
-      } else {
-        // If it's a Promise, we'll return empty string and handle it in a useEffect
-        return '';
-      }
-    } catch (error) {
-      console.error('Error parsing markdown:', error);
-      return '';
-    }
-  };
 
   const [sanitizedHtml, setSanitizedHtml] = useState('');
 
@@ -414,15 +398,11 @@ const InteractiveAIChatbot: React.FC = () => {
   
   // Add required states for ChatHeader component
   const [showSettings, setShowSettings] = useState(false);
-  const [showVoiceSettings, setShowVoiceSettings] = useState(false);
-  const [showPromptLibrary, setShowPromptLibrary] = useState(false);
-  const [showConversationMemory, setShowConversationMemory] = useState(false);
   const [isSpeaking, setIsSpeaking] = useState(false);
   const [conversationMemory, setConversationMemory] = useState<string[]>([]);
   const [detectedUserInfo, setDetectedUserInfo] = useState<DetectedUserInfo | null>(null);
   const [showMemoryPanel, setShowMemoryPanel] = useState(false);
   const [uploadedFiles, setUploadedFiles] = useState<UploadedFile[]>([]);
-  const [showFileUpload, setShowFileUpload] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
@@ -474,7 +454,7 @@ const InteractiveAIChatbot: React.FC = () => {
 
   const updateDetectedUserInfo = (messages: Message[]) => {
     // Name detection
-    let name = null;
+    let name: string | null = null;
     for (let i = messages.length - 1; i >= 0; i--) {
       const message = messages[i];
       if (message.isUser) {
@@ -814,7 +794,7 @@ const InteractiveAIChatbot: React.FC = () => {
     
     // Clear uploaded files
     setUploadedFiles([]);
-    setShowFileUpload(false);
+    setShowMemoryPanel(false);
     setIsLoading(false);
   };
 
@@ -949,21 +929,20 @@ const InteractiveAIChatbot: React.FC = () => {
   return (
     <div className="card bg-base-200 shadow-xl h-full flex flex-col overflow-hidden border border-base-300">
       <ChatHeader 
-        showSettings={showSettings}
-        setShowSettings={setShowSettings}
-        showVoiceSettings={showVoiceSettings}
-        setShowVoiceSettings={setShowVoiceSettings}
-        showPromptLibrary={showPromptLibrary}
-        setShowPromptLibrary={setShowPromptLibrary}
-        showConversationMemory={showMemoryPanel}
+        setShowPromptLibrary={() => {}}
         setShowConversationMemory={setShowMemoryPanel}
-        showToneSelector={showToneSelector}
         setShowToneSelector={setShowToneSelector}
         isSpeaking={isSpeaking}
         toggleSpeech={toggleSpeech}
         conversationMemory={conversationMemory}
         detectedUserInfo={detectedUserInfo}
         selectedTone={selectedTone}
+        onClose={() => {}}
+        isFullScreen={false}
+        toggleFullScreen={() => {}}
+        toggleSettings={() => setShowSettings(!showSettings)}
+        downloadPDF={generatePDF}
+        toggleMemoryPanel={() => setShowMemoryPanel(!showMemoryPanel)}
       />
       
       {detectedUserInfo?.name && (

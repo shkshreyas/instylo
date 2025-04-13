@@ -7,36 +7,25 @@ import { QueryProvider } from "@/lib/react-query/QueryProvider";
 
 import App from "./App";
 
-// Initialize environment variable defaults
-const initializeEnvironment = () => {
-  // Create a placeholder for any missing environment variables that are essential
-  // This ensures the app can run in a fallback/mock mode
-  const envDefaults = {
-    VITE_GEMINI_API_KEY: import.meta.env.VITE_GEMINI_API_KEY || 'mock-mode',
-    VITE_WEATHER_API_KEY: import.meta.env.VITE_WEATHER_API_KEY || 'mock-mode',
-    VITE_ENABLE_VOICE: import.meta.env.VITE_ENABLE_VOICE || 'true',
-    VITE_ENABLE_WEATHER: import.meta.env.VITE_ENABLE_WEATHER || 'true',
-    VITE_DEFAULT_TONE: import.meta.env.VITE_DEFAULT_TONE || 'friendly',
-  };
+// Initialize environment variables
+// Create a global window object for storing environment values
+declare global {
+  interface Window {
+    ENV_CONFIG: Record<string, string>;
+  }
+}
 
-  // Inject defaults into import.meta.env if not already set
-  Object.entries(envDefaults).forEach(([key, value]) => {
-    if (!import.meta.env[key]) {
-      console.info(`Environment variable ${key} not found, using fallback value`);
-      (import.meta.env as any)[key] = value;
-    }
-  });
-  
-  console.info('Environment initialized with fallbacks where needed');
-  return true;
+window.ENV_CONFIG = {
+  GEMINI_API_KEY: import.meta.env.VITE_GEMINI_API_KEY || 'mock-mode',
+  WEATHER_API_KEY: import.meta.env.VITE_WEATHER_API_KEY || 'mock-mode',
+  ENABLE_VOICE: import.meta.env.VITE_ENABLE_VOICE || 'true',
+  ENABLE_WEATHER: import.meta.env.VITE_ENABLE_WEATHER || 'true',
+  DEFAULT_TONE: import.meta.env.VITE_DEFAULT_TONE || 'friendly',
 };
 
 // Error Handler for React Rendering
 const renderApp = () => {
   try {
-    // Initialize environment variables
-    initializeEnvironment();
-
     // Get root element
     const rootElement = document.getElementById("root");
     if (!rootElement) {
