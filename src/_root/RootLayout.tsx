@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import Topbar from "@/components/shared/Topbar";
 import Bottombar from "@/components/shared/Bottombar";
 import LeftSidebar from "@/components/shared/LeftSidebar";
+import Chatbot from "@/components/chatbot";
 
 const RootLayout = () => {
   const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(window.innerWidth < 1024);
@@ -40,6 +41,9 @@ const RootLayout = () => {
       </motion.section>
 
       <Bottombar />
+      
+      {/* Add AI Chatbot */}
+      <Chatbot />
     </div>
   );
 };

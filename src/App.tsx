@@ -16,6 +16,7 @@ import RootLayout from "./_root/RootLayout";
 import SignupForm from "@/_auth/forms/SignupForm";
 import SigninForm from "@/_auth/forms/SigninForm";
 import { Toaster } from "@/components/ui/toaster";
+import Chatbot from "@/components/chatbot/Chatbot";
 
 import "./globals.css";
 
@@ -43,6 +44,9 @@ const App = () => {
         </Route>
       </Routes>
 
+      {/* Chatbot component is rendered outside of the Routes */}
+      <Chatbot />
+      
       <Toaster />
     </main>
   );
