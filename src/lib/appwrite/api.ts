@@ -1,6 +1,6 @@
 import { ID, Query } from "appwrite";
 
-import { appwriteConfig, account, databases, storage, avatars } from "./config";
+import { appwriteConfig, account, databases, avatars } from "./config";
 import { IUpdatePost, INewPost, INewUser, IUpdateUser } from "@/types";
 
 // ============================================================
@@ -161,7 +161,7 @@ export async function uploadFile(file: File) {
     const formData = new FormData();
     formData.append('image', file);
     
-    const response = await fetch(`https://api.imgbb.com/1/upload?key=b9409d197d650cf07172a9814f0b19b9`, {
+    const response = await fetch(`https://api.imgbb.com/1/upload?key=${import.meta.env.VITE_IMGBB_API_KEY}`, {
       method: 'POST',
       body: formData,
     });
@@ -182,10 +182,10 @@ export async function uploadFile(file: File) {
 }
 
 // ============================== GET FILE URL
-export function getFilePreview(fileId: string) {
+export function getFilePreview() {
   // ImgBB doesn't need a preview generation function
   // We'll just use the direct URL that was stored
-  return fileId;
+  return null;
 }
 
 // ============================== DELETE FILE
