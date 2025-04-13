@@ -10,6 +10,11 @@ import {
   PostDetails,
   UpdateProfile,
   AllUsers,
+  StudyBuddy,
+  StudySession,
+  StudySessionNew,
+  Communities,
+  Services,
 } from "@/_root/pages";
 import AuthLayout from "./_auth/AuthLayout";
 import RootLayout from "./_root/RootLayout";
@@ -41,6 +46,13 @@ const App = () => {
           <Route path="/posts/:id" element={<PostDetails />} />
           <Route path="/profile/:id/*" element={<Profile />} />
           <Route path="/update-profile/:id" element={<UpdateProfile />} />
+          <Route path="/study-buddy" element={<StudyBuddy />} />
+          <Route path="/study-session/:id" element={<StudySession />} />
+          <Route path="/study-session/new" element={<StudySessionNew />} />
+          <Route path="/communities" element={<Communities />} />
+          <Route path="/communities/:id" element={<Communities />} />
+          <Route path="/communities/create" element={<Communities />} />
+          <Route path="/services" element={<Services />} />
         </Route>
       </Routes>
 

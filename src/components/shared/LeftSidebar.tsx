@@ -82,10 +82,12 @@ const LeftSidebar = () => {
         }}
         transition={{ duration: 0.3, type: "spring", stiffness: 200 }}
         className="leftsidebar hidden lg:flex">
-        <div className="flex flex-col gap-11 min-w-[270px]">
-          <Link to="/" className="flex gap-3 items-center">
-            <h1 className="gradient-text text-2xl">Instylo</h1>
-          </Link>
+        <div className="flex flex-col h-full min-w-[270px]">
+          <div className="flex-none mb-6">
+            <Link to="/" className="flex gap-3 items-center">
+              <h1 className="gradient-text text-2xl">Instylo</h1>
+            </Link>
+          </div>
 
           <AnimatePresence>
             {!isCollapsed && (
@@ -94,7 +96,7 @@ const LeftSidebar = () => {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: 20 }}
                 transition={{ duration: 0.3 }}
-                className="profile-section">
+                className="profile-section flex-none mb-6">
                 {isLoading || !user.email ? (
                   <div className="h-14">
                     <Loader />
@@ -124,51 +126,54 @@ const LeftSidebar = () => {
             )}
           </AnimatePresence>
 
-          <ul className="flex flex-col gap-6">
-            {sidebarLinks.map((link: INavLink, index) => {
-              const isActive = pathname === link.route;
+          <div className="flex-1 overflow-y-auto pr-2 custom-scrollbar">
+            <ul className="flex flex-col gap-6 pb-6">
+              {sidebarLinks.map((link: INavLink, index) => {
+                const isActive = pathname === link.route;
 
-              return (
-                <motion.li
-                  key={link.label}
-                  initial={{ opacity: 0, x: -50 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{
-                    duration: 0.3,
-                    delay: index * 0.1,
-                    type: "spring",
-                    stiffness: 200,
-                  }}
-                  whileHover={{ x: 10 }}
-                  className={`leftsidebar-link ${isActive ? "active" : ""}`}>
-                  <NavLink to={link.route} className="nav-item">
-                    <img
-                      src={link.imgURL}
-                      alt={link.label}
-                      className={`w-6 h-6 transition-all duration-300
-                        ${isActive ? "filter-primary-500" : ""}`}
-                    />
-                    <span className="gradient-text">{link.label}</span>
-                  </NavLink>
-                </motion.li>
-              );
-            })}
-          </ul>
+                return (
+                  <motion.li
+                    key={link.label}
+                    initial={{ opacity: 0, x: -50 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{
+                      duration: 0.3,
+                      delay: index * 0.1,
+                      type: "spring",
+                      stiffness: 200,
+                    }}
+                    whileHover={{ x: 10 }}
+                    className={`leftsidebar-link ${isActive ? "active" : ""}`}>
+                    <NavLink to={link.route} className="nav-item">
+                      <img
+                        src={link.imgURL}
+                        alt={link.label}
+                        className={`w-6 h-6 transition-all duration-300
+                          ${isActive ? "filter-primary-500" : ""}`}
+                      />
+                      <span className="gradient-text">{link.label}</span>
+                    </NavLink>
+                  </motion.li>
+                );
+              })}
+            </ul>
+          </div>
+
+          <div className="flex-none pt-4 mt-6 border-t border-dark-4/30">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3 }}>
+              <Button
+                variant="ghost"
+                className="premium-hover w-full"
+                onClick={handleSignOut}>
+                <img src="/assets/icons/logout.svg" alt="logout" />
+                <p className="text-light-2">Logout</p>
+              </Button>
+            </motion.div>
+          </div>
         </div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.3 }}
-          className="mt-auto">
-          <Button
-            variant="ghost"
-            className="premium-hover w-full"
-            onClick={handleSignOut}>
-            <img src="/assets/icons/logout.svg" alt="logout" />
-            <p className="text-light-2">Logout</p>
-          </Button>
-        </motion.div>
       </motion.nav>
     </>
   );

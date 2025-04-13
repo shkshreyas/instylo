@@ -222,7 +222,7 @@
   .leftsidebar {
     @apply fixed left-0 top-0 h-screen px-6 py-10 flex-col justify-between 
       bg-dark-2/95 z-40 border-r border-dark-4/30 backdrop-blur-xl
-      shadow-premium transition-all duration-300;
+      shadow-premium transition-all duration-300 overflow-y-auto custom-scrollbar;
   }
 
   .leftsidebar-link {
