@@ -39,7 +39,7 @@ Instylo redefines social media by combining powerful networking features with in
     <td width="50%">
       <h3 align="center">🌐 Social Networking</h3>
       <div align="center">
-        <a href="#"><img src="https://img.icons8.com/fluency/100/social-network.png" alt="Social Networking" width="100px"></a>
+        <a href="#"><img src="https://img.icons8.com/?size=100&id=mxFJoV2otakg&format=png&color=000000" alt="Social Networking" width="100px"></a>
         <p>Create and share content, engage with others through likes and comments, and build your personal profile.</p>
       </div>
     </td>
@@ -101,9 +101,7 @@ Instylo redefines social media by combining powerful networking features with in
   </tr>
 </table>
 
-<div align="center">
-  <img src="./public/assets/images/wave-haikei.svg" width="100%">
-</div>
+
 
 ## Tech Stack
 
@@ -186,10 +184,6 @@ Instylo redefines social media by combining powerful networking features with in
       </td>
     </tr>
   </table>
-</div>
-
-<div align="center">
-  <img src="./public/assets/images/wave-haikei.svg" width="100%">
 </div>
 
 ## Getting Started
@@ -309,9 +303,6 @@ npm run dev
 </div>
 </details>
 
-<div align="center">
-  <img src="./public/assets/images/wave-haikei.svg" width="100%">
-</div>
 
 ## Team
 
@@ -358,9 +349,6 @@ npm run dev
   </table>
 </div>
 
-<div align="center">
-  <img src="./public/assets/images/wave-haikei.svg" width="100%">
-</div>
 
 ## Future Roadmap
 
@@ -418,10 +406,6 @@ npm run dev
     </td>
   </tr>
 </table>
-
-<div align="center">
-  <img src="./public/assets/images/wave-haikei.svg" width="100%">
-</div>
 
 <div align="center">
   <img src="https://img.icons8.com/fluency/48/star.png" width="50">
