@@ -1,11 +1,11 @@
 {
-    "github": {
-        "silent": true
-    },
-    "rewrites": [
-        {
-            "source": "/(.*)",
-            "destination": "/"
-        }
-    ]
+    "version": 2,
+    "routes": [
+        { "src": "/api/(.*)", "dest": "/api/$1" },
+        { "handle": "filesystem" },
+        { "src": "/(.*)", "dest": "/index.html" }
+    ],
+    "env": {
+        "VITE_NEWSAPI_KEY": "18264140198c44bab8fe4312f3f47533"
+    }
 }

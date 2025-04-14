@@ -41,22 +41,31 @@ const News = () => {
   const [page, setPage] = useState<number>(1);
   const [totalResults, setTotalResults] = useState<number>(0);
 
-  // Real API fetch function using NewsAPI.org
+  // Real API fetch function using NewsAPI.org via our proxy
   const fetchNews = async (category: string, query: string = "") => {
     setLoading(true);
     setError(null);
     
     try {
-      const apiKey = import.meta.env.VITE_NEWSAPI_KEY;
-      
       // Determine which API endpoint to use based on search query
       let url = '';
-      if (query) {
-        // Search everything endpoint
-        url = `https://newsapi.org/v2/everything?q=${encodeURIComponent(query)}&pageSize=${pageSize}&page=${page}&apiKey=${apiKey}`;
+      const baseUrl = import.meta.env.PROD 
+        ? `/api/news` // Use our serverless function in production
+        : `https://newsapi.org/v2`; // Use direct API in development
+      
+      if (import.meta.env.PROD) {
+        // When in production, use our serverless function
+        url = `${baseUrl}?${query ? `query=${encodeURIComponent(query)}` : `category=${category}`}&pageSize=${pageSize}&page=${page}`;
       } else {
-        // Top headlines by category
-        url = `https://newsapi.org/v2/top-headlines?category=${category}&language=en&pageSize=${pageSize}&page=${page}&apiKey=${apiKey}`;
+        // In development, use direct NewsAPI endpoints
+        const apiKey = import.meta.env.VITE_NEWSAPI_KEY;
+        if (query) {
+          // Search everything endpoint
+          url = `${baseUrl}/everything?q=${encodeURIComponent(query)}&pageSize=${pageSize}&page=${page}&apiKey=${apiKey}`;
+        } else {
+          // Top headlines by category
+          url = `${baseUrl}/top-headlines?category=${category}&language=en&pageSize=${pageSize}&page=${page}&apiKey=${apiKey}`;
+        }
       }
       
       const response = await fetch(url);
