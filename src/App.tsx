@@ -15,6 +15,10 @@ import {
   StudySessionNew,
   Communities,
   Services,
+  Marketplace,
+  VideoCall,
+  News,
+  Games,
 } from "@/_root/pages";
 import AuthLayout from "./_auth/AuthLayout";
 import RootLayout from "./_root/RootLayout";
@@ -53,6 +57,12 @@ const App = () => {
           <Route path="/communities/:id" element={<Communities />} />
           <Route path="/communities/create" element={<Communities />} />
           <Route path="/services" element={<Services />} />
+          <Route path="/marketplace" element={<Marketplace />} />
+          <Route path="/video-call" element={<VideoCall />} />
+          <Route path="/video-call/:roomId" element={<VideoCall />} />
+          <Route path="/news" element={<News />} />
+          <Route path="/news/saved" element={<News />} />
+          <Route path="/games" element={<Games />} />
         </Route>
       </Routes>
 

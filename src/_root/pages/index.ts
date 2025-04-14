@@ -1,15 +1,41 @@
-export { default as Home } from "./Home";
-export { default as Explore } from "./Explore";
-export { default as Saved } from "./Saved";
-export { default as CreatePost } from "./CreatePost";
-export { default as Profile } from "./Profile";
-export { default as UpdateProfile } from "./UpdateProfile";
-export { default as EditPost } from "./EditPost";
-export { default as PostDetails } from "./PostDetails";
-export { default as LikedPosts } from "./LikedPosts";
-export { default as AllUsers } from "./AllUsers";
-export { default as StudyBuddy } from "./StudyBuddy";
-export { default as StudySession } from "./StudySession";
-export { default as StudySessionNew } from "./StudySessionNew";
-export { default as Communities } from "./Communities";
-export { default as Services } from "./Services";
+import Home from "./Home";
+import Explore from "./Explore";
+import Saved from "./Saved";
+import CreatePost from "./CreatePost";
+import Profile from "./Profile";
+import UpdateProfile from "./UpdateProfile";
+import EditPost from "./EditPost";
+import PostDetails from "./PostDetails";
+import LikedPosts from "./LikedPosts";
+import AllUsers from "./AllUsers";
+import StudyBuddy from "./StudyBuddy";
+import StudySession from "./StudySession";
+import StudySessionNew from "./StudySessionNew";
+import Communities from "./Communities";
+import Services from "./Services";
+import Marketplace from "./Marketplace";
+import VideoCall from "./VideoCall";
+import News from "./News";
+import Games from "./Games";
+
+export {
+  Home,
+  Explore,
+  Saved,
+  CreatePost,
+  Profile,
+  UpdateProfile,
+  EditPost,
+  PostDetails,
+  LikedPosts,
+  AllUsers,
+  StudyBuddy,
+  StudySession,
+  StudySessionNew,
+  Communities,
+  Services,
+  Marketplace,
+  VideoCall,
+  News,
+  Games,
+};

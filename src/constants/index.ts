@@ -24,6 +24,11 @@ export const sidebarLinks = [
     route: "/create-post",
     label: "Create Magic",
   },
+  {
+    imgURL: "/assets/icons/video-call.svg",
+    route: "/video-call",
+    label: "Video Call",
+  },
 ];
 
 export const bottombarLinks = [
