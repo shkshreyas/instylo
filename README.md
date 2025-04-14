@@ -1,15 +1,15 @@
 <div align="center">
-  <img src="https://i.ibb.co/vvfKnJX/instylo-logo-animated.gif" alt="Instylo Logo" width="250"/>
+  <img src="./public/assets/images/logo.svg" alt="Instylo Logo" width="250"/>
   
-  # <img src="https://i.ibb.co/hB5K3sL/saturn-planet.gif" width="30"> INSTYLO <img src="https://i.ibb.co/hB5K3sL/saturn-planet.gif" width="30">
+  # INSTYLO
   
   <p align="center">
-    <a href="#features">Features</a> •
-    <a href="#tech-stack">Tech Stack</a> •
-    <a href="#getting-started">Get Started</a> •
-    <a href="#showcase">Showcase</a> •
-    <a href="#team">Team</a> •
-    <a href="#future-roadmap">Roadmap</a>
+    <a href="#features"><img src="https://img.icons8.com/fluency/48/features-list.png" width="20" height="20"/> Features</a> •
+    <a href="#tech-stack"><img src="https://img.icons8.com/color/48/programming.png" width="20" height="20"/> Tech Stack</a> •
+    <a href="#getting-started"><img src="https://img.icons8.com/color/48/rocket--v1.png" width="20" height="20"/> Get Started</a> •
+    <a href="#showcase"><img src="https://img.icons8.com/color/48/monitor--v1.png" width="20" height="20"/> Showcase</a> •
+    <a href="#team"><img src="https://img.icons8.com/color/48/conference-call--v1.png" width="20" height="20"/> Team</a> •
+    <a href="#future-roadmap"><img src="https://img.icons8.com/color/48/road--v1.png" width="20" height="20"/> Roadmap</a>
   </p>
   
   ![GitHub stars](https://img.shields.io/github/stars/shkshreyas/instylo?style=for-the-badge&color=F4B400)
@@ -22,11 +22,6 @@
   <em>Experience the next generation of social connectivity and learning!</em>
   <br/><br/>
 </div>
-
-<div align="center">
-  <img src="https://i.ibb.co/Sw6cJYw/instylo-demo.gif" alt="Instylo Demo" width="80%"/>
-</div>
-
 <br/>
 
 ## ✨ Next-Gen Social Platform
@@ -34,24 +29,24 @@
 Instylo redefines social media by combining powerful networking features with innovative learning tools, community building, and entertainment - all in one sleek platform designed for the future.
 
 <div align="center">
-  <img src="https://i.ibb.co/5RgD71t/wave-haikei.svg" width="100%">
+  <hr style="width:100%; border:0; height:2px; background-color:#f0f0f0; margin: 30px 0;">
 </div>
 
-## <img src="https://i.ibb.co/Jx5g21K/features-icon.gif" width="30"> Features
+## Features
 
 <table>
   <tr>
     <td width="50%">
       <h3 align="center">🌐 Social Networking</h3>
       <div align="center">
-        <a href="#"><img src="https://i.ibb.co/Yj9xY9P/social-networking.gif" alt="Social Networking" width="250px"></a>
+        <a href="#"><img src="https://img.icons8.com/fluency/100/social-network.png" alt="Social Networking" width="100px"></a>
         <p>Create and share content, engage with others through likes and comments, and build your personal profile.</p>
       </div>
     </td>
     <td width="50%">
       <h3 align="center">🎮 Game Center</h3>
       <div align="center">
-        <a href="#"><img src="https://i.ibb.co/J5B6t7Z/gaming.gif" alt="Game Center" width="250px"></a>
+        <a href="#"><img src="https://img.icons8.com/fluency/100/controller.png" alt="Game Center" width="100px"></a>
         <p>Access a curated collection of free games with advanced filtering and search functionality.</p>
       </div>
     </td>
@@ -60,14 +55,14 @@ Instylo redefines social media by combining powerful networking features with in
     <td width="50%">
       <h3 align="center">🧠 Study Buddy System</h3>
       <div align="center">
-        <a href="#"><img src="https://i.ibb.co/3sMC29g/study-buddy.gif" alt="Study Buddy" width="250px"></a>
+        <a href="#"><img src="https://img.icons8.com/fluency/100/student-center.png" alt="Study Buddy" width="100px"></a>
         <p>Connect with AI-powered study companions and track your learning progress across subjects.</p>
       </div>
     </td>
     <td width="50%">
       <h3 align="center">📰 News Feed</h3>
       <div align="center">
-        <a href="#"><img src="https://i.ibb.co/82QfjKR/news.gif" alt="News Feed" width="250px"></a>
+        <a href="#"><img src="https://img.icons8.com/fluency/100/news.png" alt="News Feed" width="100px"></a>
         <p>Stay updated with categorized news and save articles for later reading.</p>
       </div>
     </td>
@@ -76,14 +71,14 @@ Instylo redefines social media by combining powerful networking features with in
     <td width="50%">
       <h3 align="center">🎯 Communities</h3>
       <div align="center">
-        <a href="#"><img src="https://i.ibb.co/TMqDK5k/communities.gif" alt="Communities" width="250px"></a>
+        <a href="#"><img src="https://img.icons8.com/fluency/100/conference-call.png" alt="Communities" width="100px"></a>
         <p>Join specialized groups tailored to your interests and connect with like-minded individuals.</p>
       </div>
     </td>
     <td width="50%">
       <h3 align="center">🎥 Video Conferencing</h3>
       <div align="center">
-        <a href="#"><img src="https://i.ibb.co/M6BMQZL/video-call.gif" alt="Video Call" width="250px"></a>
+        <a href="#"><img src="https://img.icons8.com/fluency/100/video-call.png" alt="Video Call" width="100px"></a>
         <p>Create or join video call rooms to connect with friends, family, or study groups.</p>
       </div>
     </td>
@@ -92,14 +87,14 @@ Instylo redefines social media by combining powerful networking features with in
     <td width="50%">
       <h3 align="center">🛒 Marketplace</h3>
       <div align="center">
-        <a href="#"><img src="https://i.ibb.co/NsnNkLw/marketplace.gif" alt="Marketplace" width="250px"></a>
+        <a href="#"><img src="https://img.icons8.com/fluency/100/shop.png" alt="Marketplace" width="100px"></a>
         <p>Browse products, earn reward points, and access special discounts and offers.</p>
       </div>
     </td>
     <td width="50%">
       <h3 align="center">🤝 Services</h3>
       <div align="center">
-        <a href="#"><img src="https://i.ibb.co/ZG0Jn7V/services.gif" alt="Services" width="250px"></a>
+        <a href="#"><img src="https://img.icons8.com/fluency/100/service.png" alt="Services" width="100px"></a>
         <p>Discover volunteer opportunities and service activities to contribute to your community.</p>
       </div>
     </td>
@@ -107,10 +102,10 @@ Instylo redefines social media by combining powerful networking features with in
 </table>
 
 <div align="center">
-  <img src="https://i.ibb.co/5RgD71t/wave-haikei.svg" width="100%">
+  <img src="./public/assets/images/wave-haikei.svg" width="100%">
 </div>
 
-## <img src="https://i.ibb.co/DpQMkmN/tech-icon.gif" width="30"> Tech Stack
+## Tech Stack
 
 <div align="center">
   <table>
@@ -173,7 +168,7 @@ Instylo redefines social media by combining powerful networking features with in
       </td>
       <td align="center" width="96">
         <a href="#">
-          <img src="https://api.iconify.design/logos/jitsi.svg" width="48" height="48" alt="Jitsi" />
+          <img src="https://play-lh.googleusercontent.com/1ckxjos_oOGSNOFyUE-cp7xSCoKLVgMOEAGVCgb6WDhObTlDDnyLohgtI8o1TI2c7A=w480-h960-rw" width="48" height="48" alt="Jitsi" />
         </a>
         <br>Jitsi Meet
       </td>
@@ -185,7 +180,7 @@ Instylo redefines social media by combining powerful networking features with in
       </td>
       <td align="center" width="96">
         <a href="#">
-          <img src="https://api.iconify.design/logos/rapidapi-icon.svg" width="48" height="48" alt="RapidAPI" />
+          <img src="https://cdn.brandfetch.io/idgpz0KFYv/w/400/h/400/theme/dark/icon.jpeg?c=1bxid64Mup7aczewSAYMX&t=1670416253307" width="48" height="48" alt="RapidAPI" />
         </a>
         <br>RapidAPI
       </td>
@@ -194,10 +189,10 @@ Instylo redefines social media by combining powerful networking features with in
 </div>
 
 <div align="center">
-  <img src="https://i.ibb.co/5RgD71t/wave-haikei.svg" width="100%">
+  <img src="./public/assets/images/wave-haikei.svg" width="100%">
 </div>
 
-## <img src="https://i.ibb.co/Qv7KQrh/rocket-icon.gif" width="30"> Getting Started
+## Getting Started
 
 ### Prerequisites
 
@@ -251,17 +246,17 @@ npm run dev
 </details>
 
 <div align="center">
-  <a href="https://instylo.vercel.app" target="_blank"><img src="https://i.ibb.co/LvK2tVv/live-demo-button.png" alt="Try Live Demo" height="60"></a>
+  <a href="https://instylo.vercel.app" target="_blank"><img src="https://img.shields.io/badge/Try%20Live%20Demo-4285F4?style=for-the-badge&logo=vercel&logoColor=white" alt="Try Live Demo" height="40"></a>
 </div>
 
 <div align="center">
-  <img src="https://i.ibb.co/5RgD71t/wave-haikei.svg" width="100%">
+  <hr style="width:100%; border:0; height:2px; background-color:#f0f0f0; margin: 30px 0;">
 </div>
 
-## <img src="https://i.ibb.co/vHP0nJ7/display-icon.gif" width="30"> Showcase
+## Showcase
 
 <div align="center">
-  <img src="https://i.ibb.co/N9JdMNP/responsive-demo.png" alt="Responsive Design" width="80%">
+  <img src="https://img.shields.io/badge/Fully%20Responsive-0F9D58?style=for-the-badge" alt="Responsive Design" />
   <p>Fully responsive across all devices</p>
 </div>
 
@@ -315,10 +310,10 @@ npm run dev
 </details>
 
 <div align="center">
-  <img src="https://i.ibb.co/5RgD71t/wave-haikei.svg" width="100%">
+  <img src="./public/assets/images/wave-haikei.svg" width="100%">
 </div>
 
-## <img src="https://i.ibb.co/JQSLsCX/team-icon.gif" width="30"> Team
+## Team
 
 <div align="center">
   <table>
@@ -364,15 +359,15 @@ npm run dev
 </div>
 
 <div align="center">
-  <img src="https://i.ibb.co/5RgD71t/wave-haikei.svg" width="100%">
+  <img src="./public/assets/images/wave-haikei.svg" width="100%">
 </div>
 
-## <img src="https://i.ibb.co/3zM39YD/future-icon.gif" width="30"> Future Roadmap
+## Future Roadmap
 
 <table>
   <tr>
     <td>
-      <img src="https://i.ibb.co/0jz1hWH/real-time-icon.gif" width="50" height="50">
+      <img src="https://img.icons8.com/fluency/48/communication.png" width="50" height="50">
     </td>
     <td>
       <h3>Real-time Features</h3>
@@ -385,7 +380,7 @@ npm run dev
   </tr>
   <tr>
     <td>
-      <img src="https://i.ibb.co/85V6fG7/ai-icon.gif" width="50" height="50">
+      <img src="https://img.icons8.com/fluency/48/artificial-intelligence.png" width="50" height="50">
     </td>
     <td>
       <h3>AI Enhancements</h3>
@@ -398,7 +393,7 @@ npm run dev
   </tr>
   <tr>
     <td>
-      <img src="https://i.ibb.co/mJ7D1sP/mobile-icon.gif" width="50" height="50">
+      <img src="https://img.icons8.com/fluency/48/iphone.png" width="50" height="50">
     </td>
     <td>
       <h3>Mobile Apps</h3>
@@ -411,7 +406,7 @@ npm run dev
   </tr>
   <tr>
     <td>
-      <img src="https://i.ibb.co/ZXf1nTK/analytics-icon.gif" width="50" height="50">
+      <img src="https://img.icons8.com/fluency/48/combo-chart.png" width="50" height="50">
     </td>
     <td>
       <h3>Enhanced Analytics</h3>
@@ -425,11 +420,11 @@ npm run dev
 </table>
 
 <div align="center">
-  <img src="https://i.ibb.co/5RgD71t/wave-haikei.svg" width="100%">
+  <img src="./public/assets/images/wave-haikei.svg" width="100%">
 </div>
 
 <div align="center">
-  <img src="https://i.ibb.co/HGY0JZL/star-animation.gif" width="50">
+  <img src="https://img.icons8.com/fluency/48/star.png" width="50">
   <h2>We'd love your feedback and contributions!</h2>
   <p>Feel free to open issues, submit pull requests, or reach out to the team.</p>
   
@@ -448,23 +443,5 @@ npm run dev
 
 <div align="center">
   <br/>
-  <p>© 2024 Instylo. All rights reserved.</p>
+  <p>© 2025 Instylo. All rights reserved.</p>
 </div>
-
-<!-- Hidden HTML for styling -->
-<style>
-  .showcase-grid {
-    display: flex;
-    justify-content: space-between;
-    margin: 20px 0;
-  }
-  @media (max-width: 768px) {
-    .showcase-grid {
-      flex-direction: column;
-    }
-    .showcase-grid img {
-      width: 100%;
-      margin-bottom: 10px;
-    }
-  }
-</style>
