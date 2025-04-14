@@ -39,7 +39,7 @@ Instylo redefines social media by combining powerful networking features with in
     <td width="50%">
       <h3 align="center">🌐 Social Networking</h3>
       <div align="center">
-        <a href="#"><img src="https://img.icons8.com/?size=100&id=mxFJoV2otakg&format=png&color=000000" alt="Social Networking" width="100px"></a>
+        <a href="#"><img src="https://img.icons8.com/?size=100&id=108559&format=png&color=000000" alt="Social Networking" width="100px"></a>
         <p>Create and share content, engage with others through likes and comments, and build your personal profile.</p>
       </div>
     </td>
