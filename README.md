@@ -418,7 +418,7 @@ npm run dev
   ·
   <a href="https://github.com/shkshreyas/instylo/issues">Request Feature</a>
   ·
-  <a href="mailto:contact@instylo.com">Contact Us</a>
+  <a href="mailto:shkshreyaskumar@gmail.com">Contact Us</a>
   
   <br/><br/>
   
